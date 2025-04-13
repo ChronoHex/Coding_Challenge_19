@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// task 1
+import React, { useState } from 'react'; // import react
+import Gallary from './components/Gallery'; // import gallery
+import './styles/styles.css'; // import styles
 
+//app component
 function App() {
-  const [count, setCount] = useState(0)
+  const [tours, setTours] = useState([]); // holding states of tour's data
+
+  const removeTour = (id) => {
+    setTours((prevTours) => prevTours.filter((tour) => tour.id !== id)); // removes tours by id
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <main>
+      <h1>Current Tours available</h1>
+      <Gallary tours={tours} setTours={setTours} onRemove={removeTour} /> 
+    </main>
+  ); // return component
 }
 
-export default App
+export default App; // exports app
