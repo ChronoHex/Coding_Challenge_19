@@ -18,7 +18,7 @@ const Gallery = ({ tours, setTours, onRemove }) => { // gallery component
             setError(err.message); // set error message
             setLoading(false); // set loading to false in case of error
           }
-        };
+        }; // had multiple errors, trying to catch them as they appear, copilot was used to see why my fixes didn't work
 
         fetchTours();
     }, [setTours]);
