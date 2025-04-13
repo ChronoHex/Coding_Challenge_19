@@ -1,7 +1,7 @@
 // task 1
 import React, { useState } from 'react'; // import react
 import Gallary from './components/Gallery'; // import gallery
-import './styles/styles.css'; // import styles
+import './styles/style.css'; // import styles
 
 //app component
 function App() {
